@@ -1,3 +1,4 @@
+import 'package:apptheme/apptheme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_widgets/flutter_widgets.dart';
 
@@ -38,7 +39,7 @@ class HomeScreen extends StatelessWidget {
                       children: [
                         "Amplify your impact"
                             .body()
-                            .color(Theme.of(context).backgroundColor),
+                            .color(AppTheme.lightTheme.backgroundColor),
                         Icon(
                           Icons.navigate_next_outlined,
                           color: Theme.of(context).backgroundColor,
