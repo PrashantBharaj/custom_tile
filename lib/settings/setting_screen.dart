@@ -37,23 +37,18 @@ class _SettingsState extends State<Settings> {
                       child: ListView.builder(
                         itemCount: SettingsUIModel.rowsTitle.length,
                         itemBuilder: (context, index){
-                          Color foregroundColor = Theme.of(context).canvasColor;
-                          Color backgroundColor = Theme.of(context).backgroundColor;
+                          Color textColor = Theme.of(context).canvasColor;
+                          Color tileColor = Theme.of(context).backgroundColor;
                           Color iconColor = Theme.of(context).canvasColor;
                           if (index == 1) {
-                            backgroundColor = Theme.of(context).successColor;
-                            foregroundColor = Theme.of(context).backgroundColor;
+                            tileColor = Theme.of(context).successColor;
+                            textColor = Theme.of(context).backgroundColor;
                             iconColor = Theme.of(context).backgroundColor;
                           } else if (index == 2) {
-                            backgroundColor = Theme.of(context).primaryColor;
-                            foregroundColor = Theme.of(context).backgroundColor;
-                            iconColor = Theme.of(context).backgroundColor;
-                          } else if (index == 3) {
-                            backgroundColor = Theme.of(context).errorColor;
-                            foregroundColor = Theme.of(context).backgroundColor;
+                            tileColor = Theme.of(context).primaryColor;
+                            textColor = Theme.of(context).backgroundColor;
                             iconColor = Theme.of(context).backgroundColor;
                           }
-
                           String buttonTitle = SettingsUIModel.rowsTitle[index];
                           String iconPath = SettingsUIModel.icons[index];
                           return TextButton(
@@ -64,10 +59,9 @@ class _SettingsState extends State<Settings> {
                             child: Container(
                               height: 55,
                               decoration: BoxDecoration(
-                                color: backgroundColor,
+                                color: tileColor,
                                 borderRadius:
                                 const BorderRadius.all(Radius.circular(10)),
-                                // border: Border.all( color: Theme.of(context).primaryColor),
                                 boxShadow: [
                                   BoxShadow(
                                     color: Theme.of(context)
@@ -90,7 +84,7 @@ class _SettingsState extends State<Settings> {
                                     child: buttonTitle
                                         .body()
                                         .bold()
-                                        .color(foregroundColor),
+                                        .color(textColor),
                                   ),
                                   Padding(
                                     padding: const EdgeInsets.only(right: 20),
